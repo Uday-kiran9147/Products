@@ -14,15 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          colorScheme:
-              const ColorScheme.light(primary: GlobalVariables.secondaryColor),
-          appBarTheme: const AppBarTheme(
-              iconTheme: IconThemeData(color: Colors.black), elevation: 5),
-          scaffoldBackgroundColor: GlobalVariables.backgroundColor),
-      title: "Amazon",
-      onGenerateRoute: (settings) => generateRoute(settings),
-      home: AuthScreen()
-    );
+        theme: ThemeData(
+            colorScheme: const ColorScheme.light(
+                primary: GlobalVariables.secondaryColor),
+            appBarTheme: const AppBarTheme(
+                iconTheme: IconThemeData(color: Colors.black), elevation: 5),
+            scaffoldBackgroundColor: GlobalVariables.backgroundColor),
+        title: "Amazon",
+        onGenerateRoute: (settings) => generateRoute(settings),
+        home: AuthScreen());
   }
 }

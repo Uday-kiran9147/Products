@@ -25,10 +25,9 @@ class _AuthScreenState extends State<AuthScreen> {
     final _signUpformkey = GlobalKey<FormState>();
     final _signInformkey = GlobalKey<FormState>();
 
-    final TextEditingController _emailController = new TextEditingController();
-    final TextEditingController _passwordController =
-        new TextEditingController();
-    final TextEditingController _nameController = new TextEditingController();
+    final TextEditingController _emailController = TextEditingController();
+    final TextEditingController _passwordController = TextEditingController();
+    final TextEditingController _nameController = TextEditingController();
 
     void dispose() {
       super.dispose();
@@ -48,7 +47,10 @@ class _AuthScreenState extends State<AuthScreen> {
             children: [
               const Text(
                 "Helloe",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               ListTile(
                 tileColor: _auth == Auth.signup
