@@ -1,6 +1,7 @@
 import 'package:amazonn/common/custom_button.dart';
 import 'package:amazonn/common/customtextfield.dart';
 import 'package:amazonn/constants/global_vars.dart';
+import 'package:amazonn/features/Auth/Screens/Services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 enum Auth {
@@ -24,6 +25,7 @@ class _AuthScreenState extends State<AuthScreen> {
     // Navigator.pushNamed(context, ' ',)
     final _signUpformkey = GlobalKey<FormState>();
     final _signInformkey = GlobalKey<FormState>();
+    final AuthService authService = AuthService();
 
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passwordController = TextEditingController();
@@ -34,6 +36,14 @@ class _AuthScreenState extends State<AuthScreen> {
       _emailController.dispose();
       _passwordController.dispose();
       _nameController.dispose();
+    }
+
+    void SignupUser() {
+      authService.signupUser(
+          context: context,
+          email: _emailController.text,
+          password: _passwordController.text,
+          name: _nameController.text);
     }
 
     return Scaffold(
@@ -97,7 +107,15 @@ class _AuthScreenState extends State<AuthScreen> {
                         const SizedBox(
                           height: 10,
                         ),
-                        CostumButton(text: "Sign-Up", onTap: () {})
+                        CostumButton(
+                            text: "Sign-Up",
+                            onTap: () {
+                              print(_emailController);
+
+                              if (_signUpformkey.currentState!.validate()) {
+                                SignupUser();
+                              }
+                            })
                       ],
                     ),
                   ),

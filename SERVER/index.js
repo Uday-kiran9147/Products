@@ -29,7 +29,7 @@ try {
         console.log(" Data base connection Successful");
 
         app.get("/", function (req, res) {
-            res.send("This is Amazon");
+            res.send("This is Amazon second");
         })
         app.get("/signup", function (req, res) {
             res.send("This is signup ");
@@ -44,7 +44,7 @@ catch (e) {
 //localhost
 
 
-app.listen(port, function (req, res) {
+app.listen(port, "0.0.0.0", function (req, res) {
 
     console.log(`connected at port ${port}`);
 
