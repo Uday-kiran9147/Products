@@ -1,5 +1,5 @@
 import 'package:amazonn/Models/user.dart';
-import 'package:amazonn/common/error_handle.dart';
+import 'package:amazonn/constants/error_handle.dart';
 import 'package:amazonn/constants/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;

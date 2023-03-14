@@ -25,11 +25,12 @@ class _AuthScreenState extends State<AuthScreen> {
     // Navigator.pushNamed(context, ' ',)
     final _signUpformkey = GlobalKey<FormState>();
     final _signInformkey = GlobalKey<FormState>();
-    final AuthService authService = AuthService();
+    final AuthService _authService = AuthService();
 
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passwordController = TextEditingController();
     final TextEditingController _nameController = TextEditingController();
+
 
     void dispose() {
       super.dispose();
@@ -39,7 +40,7 @@ class _AuthScreenState extends State<AuthScreen> {
     }
 
     void SignupUser() {
-      authService.signupUser(
+      _authService.signupUser(
           context: context,
           email: _emailController.text,
           password: _passwordController.text,

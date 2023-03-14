@@ -33,7 +33,7 @@ class User {
 
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
-      id: (map["_id"] ?? '') as String,
+      id: (map["id"] ?? '') as String,
       name: (map["name"] ?? '') as String,
       email: (map["email"] ?? '') as String,
       password: (map["password"] ?? '') as String,
@@ -45,5 +45,6 @@ class User {
 
   String toJson() => json.encode(toMap());
 
-  factory User.fromJson(String source) => User.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory User.fromJson(String source) =>
+      User.fromMap(json.decode(source) as Map<String, dynamic>);
 }

@@ -12,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: (val) {
-        if (val!.isEmpty || val == null) {
+        if (val!.isEmpty) {
           return "Enter your $hintText";
         }
         return null;
