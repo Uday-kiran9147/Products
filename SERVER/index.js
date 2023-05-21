@@ -29,7 +29,7 @@ try {
         console.log(" Data base connection Successful");
 
         app.get("/", function (req, res) {
-            res.send("This is Amazon second");
+            res.send("This is Amazon forest");
         })
         app.get("/signup", function (req, res) {
             res.send("This is signup ");

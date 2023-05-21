@@ -57,7 +57,7 @@ class _AuthScreenState extends State<AuthScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Helloe",
+                "Hello",
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w500,
@@ -86,6 +86,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   padding: const EdgeInsets.all(8.0),
                   color: GlobalVariables.backgroundColor,
                   child: Form(
+                  
                     key: _signUpformkey,
                     child: Column(
                       children: [
@@ -111,7 +112,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         CostumButton(
                             text: "Sign-Up",
                             onTap: () {
-                              print(_emailController);
+                              print(_emailController.text);
 
                               if (_signUpformkey.currentState!.validate()) {
                                 SignupUser();
